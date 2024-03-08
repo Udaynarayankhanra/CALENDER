@@ -2,12 +2,11 @@ const daysTag = document.querySelector(".days"),
   currentDate = document.querySelector(".current-date"),
   prevNextIcon = document.querySelectorAll(".icons span");
  
-// getting new date0, current year and month
 let date = new Date(),
   currYear = date.getFullYear(),
   currMonth = date.getMonth();
 
-// storing full name of all months in array
+
 const months = [
   "January",
   "February",
@@ -31,13 +30,12 @@ const renderCalendar = () => {
   let liTag = "";
 
   for (let i = firstDayofMonth; i > 0; i--) {
-    // creating li of previous month last days
+   
     liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
   }
 
   for (let i = 1; i <= lastDateofMonth; i++) {
-    // creating li of all days of current month
-    // adding active class to li if the current day, month, and year matched
+    
     let isToday =
       i === date.getDate() &&
       currMonth === new Date().getMonth() &&
@@ -48,16 +46,15 @@ const renderCalendar = () => {
   }
 
   for (let i = lastDayofMonth; i < 6; i++) {
-    // creating li of next month first days
     liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
   }
-  currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+  currentDate.innerText = `${months[currMonth]} ${currYear}`; 
   daysTag.innerHTML = liTag;
 
   var uday=document.getElementById("uday_1");
 uday.style.color="red";
 var month_calculation=`${currMonth}`;
-// document.write(month_calculation);
+
 var uday1=document.getElementById("uday_1");
 uday1.innerText=`${month_calculation}`;
 if(month_calculation==4){
